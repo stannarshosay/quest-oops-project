@@ -3,6 +3,7 @@ package classes;
 public class HighSchoolTeacher extends Teacher{
 	
 	private String highSchoolSubject;
+	private Integer roomNo;
 	
 	public void printFormattedGender() {
 		//public variables of superclass are accessible in subclass
@@ -42,5 +43,16 @@ public class HighSchoolTeacher extends Teacher{
 		printSalary();
 	}
 	
-
+	
+	public void printRoomNos(){
+		System.out.println("RoomNo Subclass "+this.roomNo);
+		System.out.println("RoomNo Superclass "+super.roomNo);
+	}
+	
+	public void setRoomNo(Integer superRoomNo,Integer subRoomNo) {
+		
+		this.roomNo = subRoomNo;
+		super.roomNo = superRoomNo;
+	}
+	
 }

@@ -6,6 +6,8 @@ public class Teacher {
 	private Integer age;
 	protected Long salary;
 	
+	protected Integer roomNo;
+	
 	
 	public void printGender() {
 		System.out.println("Gender : "+this.gender);
