@@ -3,12 +3,12 @@ package main;
 import classes.Bird;
 
 //-----------------------------------------------------------------
-//	Specifier	|  class  |	subclass | 	package	 |	world(outside)
+//	Specifier		class	subclass	package		world(outside)
 //-----------------------------------------------------------------
-//  private			✅			no		  no		  no
-//  protected		✅			✅	      ✅	      no
-//  public			✅			✅	  	  ✅	      ✅
-//  default(none)	✅			no	      ✅	      no
+//  private			✅		no			no			no
+//  protected		✅		✅			✅			no
+//  public			✅		✅			✅			✅
+//  default(none)	✅		no			✅			no
 
 //✅ = Can Access | No = No Access.
 
