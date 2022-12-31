@@ -7,8 +7,12 @@ import classes.Laptop;
 //of super or parent class
 
 public class RunPolymorphismFunctionOverriding {
+	
 
 	public static void main(String[] args) {
+		
+		
+		System.out.println("Laptop Distributer : "+Laptop.OS_DISTRIBUTER);
 		
 		Laptop laptop = new Laptop();
 		laptop.setName("Windows 11");
@@ -16,7 +20,11 @@ public class RunPolymorphismFunctionOverriding {
 		laptop.setBrand("HP");
 		laptop.setPrice(76000);
 		
-		laptop.printDetails();
+		laptop.printAllDetails();
+		
+//		laptop.printOsDetails();
+		
+		
 
 	}
 

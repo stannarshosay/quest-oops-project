@@ -25,18 +25,14 @@ public class Laptop extends OperatingSystem {
 	//Annotation to override a function
 	
 	@Override
-	public void printDetails() {
+	public void printAllDetails() {
 		
-		super.printDetails();	
+		super.printAllDetails();	
 		
 		System.out.println("Brand : "+this.brand);
 		System.out.println("Price : "+this.price);
 		
-	}	
-	
-	
-	
-	
+	}
 	
 
 }
