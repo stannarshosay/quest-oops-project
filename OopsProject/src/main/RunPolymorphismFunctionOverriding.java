@@ -14,6 +14,16 @@ public class RunPolymorphismFunctionOverriding {
 		
 		System.out.println("Laptop Distributer : "+Laptop.OS_DISTRIBUTER);
 		
+//		Laptop laptop = new Laptop() {
+//
+//			@Override
+//			public String toString() {
+//				this.printAllDetails();
+//				return "";
+//			}
+//			
+//		};
+		
 		Laptop laptop = new Laptop();
 		laptop.setName("Windows 11");
 		laptop.setIsOpenSource(false);
@@ -24,7 +34,7 @@ public class RunPolymorphismFunctionOverriding {
 		
 //		laptop.printOsDetails();
 		
-		
+//		laptop.toString();
 
 	}
 
