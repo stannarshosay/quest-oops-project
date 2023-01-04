@@ -22,8 +22,6 @@ public class RunConstructors {
 		System.out.println(doctor.getName());
 		System.out.println(doctor.getLocation());
 				
-		
-		
 	}
 
 }
