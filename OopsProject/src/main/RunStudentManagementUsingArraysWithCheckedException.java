@@ -36,7 +36,7 @@ public class RunStudentManagementUsingArraysWithCheckedException {
 					
 					System.out.println("Adding Student to Position : "+dao.getPosition()+"/"+dao.getLength());
 					System.out.println("Enter Name : ");
-					String name = scanner.next();
+					String name = scanner.nextLine();
 					System.out.println("Enter RollNo : ");
 					int rollNo = scanner.nextInt();
 					
@@ -94,6 +94,28 @@ public class RunStudentManagementUsingArraysWithCheckedException {
 					break;
 				}
 				case 4:{
+					
+					System.out.println("Enter the roll no of Student : ");
+					int rollNo = scanner.nextInt();
+					
+					Student student = dao.getStudent(rollNo);
+					
+					if(student == null) {
+						
+						System.out.println("Oops! No such record found");
+						
+					}else {
+						
+						System.out.println(student.getRollNo()+" | "+student.getName());
+						
+						System.out.println("\nEnter the new name : ");
+						String name = scanner.nextLine();
+						
+						student.setName(name);
+					}
+					
+					
+					
 					break;
 				}
 				case 5:{
