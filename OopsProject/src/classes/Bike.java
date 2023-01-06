@@ -1,7 +1,6 @@
 package classes;
 
 public class Bike extends Vehicle {
-
 	
 	private boolean isSportsBike;
 	private boolean isPillionSeat;
