@@ -1,10 +1,20 @@
 package classes;
 
+//Model class Student
 public class Student {
 
 	private String name;
 	private int rollNo;
 	private int marks[];
+	
+	public Student() {
+		
+	}
+
+	public Student(String name, int rollNo) {
+		this.name = name;
+		this.rollNo = rollNo;
+	}
 
 	public String getName() {
 		return name;
