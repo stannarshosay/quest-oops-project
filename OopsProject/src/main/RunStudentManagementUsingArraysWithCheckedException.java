@@ -30,6 +30,7 @@ public class RunStudentManagementUsingArraysWithCheckedException {
 			System.out.println("*) Quit");
 			
 			option = scanner.nextInt();
+			scanner.nextLine();
 			
 			switch(option) {
 				case 1:{
@@ -40,7 +41,19 @@ public class RunStudentManagementUsingArraysWithCheckedException {
 					System.out.println("Enter RollNo : ");
 					int rollNo = scanner.nextInt();
 					
-					Student student = new Student(name,rollNo);
+					//skip line after nextInt
+					scanner.nextLine();
+					
+					System.out.println("Enter Address : ");
+					String address = scanner.nextLine();
+					System.out.println("Enter Blood Group : ");
+					String bloodGroup = scanner.nextLine();
+					
+					Student student = new Student();
+					student.setRollNo(rollNo);
+					student.setName(name);
+					student.setAddress(address);
+					student.setBloodGroup(bloodGroup);
 					
 					dao.addStudent(student);
 					
@@ -59,7 +72,7 @@ public class RunStudentManagementUsingArraysWithCheckedException {
 						
 					}else {
 						
-						System.out.println(student.getRollNo()+" | "+student.getName());
+						student.printDetails();
 						
 					}
 					
@@ -75,12 +88,12 @@ public class RunStudentManagementUsingArraysWithCheckedException {
 						
 						//method 1 (preferred)
 						if(student == null) continue;						
-						System.out.println(student.getRollNo()+" | "+student.getName());
+						student.printDetails();
 							
 						//method 2
 //						try {
 //							
-//							System.out.println(student.getRollNo()+" | "+student.getName());
+//							student.printDetails();
 //
 //						}catch(NullPointerException e) {
 //							
@@ -97,6 +110,40 @@ public class RunStudentManagementUsingArraysWithCheckedException {
 					
 					System.out.println("Enter the roll no of Student : ");
 					int rollNo = scanner.nextInt();
+					scanner.nextLine();
+					
+					Student student = dao.getStudent(rollNo);
+					
+					if(student == null) {
+						
+						System.out.println("Oops! No such record found");
+						
+					} else {
+						
+						student.printDetails();
+						
+						System.out.println("\nEnter the new name : ");
+						String name = scanner.nextLine();
+						System.out.println("Enter the new address : ");
+						String address = scanner.nextLine();
+						System.out.println("Enter the new blood group : ");
+						String bloodGroup = scanner.nextLine();
+						
+						Student newStudent = new Student();
+						newStudent.setName(name);
+						newStudent.setAddress(address);
+						newStudent.setBloodGroup(bloodGroup);
+						
+						dao.editStudent(student,newStudent);
+						
+					}
+					
+					break;
+				}
+				case 5:{
+					
+					System.out.println("Enter the roll no of Student : ");
+					int rollNo = scanner.nextInt();
 					
 					Student student = dao.getStudent(rollNo);
 					
@@ -106,19 +153,14 @@ public class RunStudentManagementUsingArraysWithCheckedException {
 						
 					}else {
 						
-						System.out.println(student.getRollNo()+" | "+student.getName());
+						System.out.println("The student with below details have been deleted :");						
+						student.printDetails();
 						
-						System.out.println("\nEnter the new name : ");
-						String name = scanner.nextLine();
+						dao.deleteStudent();
 						
-						student.setName(name);
 					}
 					
 					
-					
-					break;
-				}
-				case 5:{
 					break;
 				}
 			}

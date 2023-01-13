@@ -1,5 +1,7 @@
 package classes;
 
+import java.util.Scanner;
+
 //These kind classes are used for CRUD operation w.r.t a model class
 // C - Create | R - Retrieve | U - Update | D - Delete
 //Sometimes its also called Repository class
@@ -55,6 +57,21 @@ public class StudentDataAccessObject {
     	}
     	
     	return null;
+    	
+    }
+    
+    public void deleteStudent() {
+    	
+    	
+    	
+    	
+    }
+    
+    public void editStudent(Student student,Student newStudent) {
+    	
+		student.setName(newStudent.getName());
+		student.setAddress(newStudent.getAddress());
+		student.setBloodGroup(newStudent.getBloodGroup());
     	
     }
 

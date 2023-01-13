@@ -5,15 +5,12 @@ public class Student {
 
 	private String name;
 	private int rollNo;
+	private String address;
+	private String bloodGroup;
 	private int marks[];
-	
-	public Student() {
-		
-	}
 
-	public Student(String name, int rollNo) {
-		this.name = name;
-		this.rollNo = rollNo;
+	public Student() {
+
 	}
 
 	public String getName() {
@@ -32,6 +29,22 @@ public class Student {
 		this.rollNo = rollNo;
 	}
 
+	public String getAddress() {
+		return address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
+	public String getBloodGroup() {
+		return bloodGroup;
+	}
+
+	public void setBloodGroup(String bloodGroup) {
+		this.bloodGroup = bloodGroup;
+	}
+
 	public int[] getMarks() {
 		return marks;
 	}
@@ -46,9 +59,17 @@ public class Student {
 
 		for (int mark : this.marks)
 			sum += mark;
-		
+
 		return sum;
 
+	}
+	
+	public void printDetails() {
+		
+		System.out.println("\n"+this.rollNo+") "+this.name+"\n------------");
+		System.out.println("Address : "+this.address);
+		System.out.println("Blood Group : "+this.bloodGroup+"\n");
+		
 	}
 
 }
