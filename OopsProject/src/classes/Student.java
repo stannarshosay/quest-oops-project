@@ -1,7 +1,9 @@
 package classes;
 
+import java.io.Serializable;
+
 //Model class Student
-public class Student {
+public class Student implements Serializable {
 
 	private String name;
 	private int rollNo;
@@ -66,9 +68,15 @@ public class Student {
 	
 	public void printDetails() {
 		
-		System.out.println("\n"+this.rollNo+") "+this.name+"\n------------");
+		System.out.println("\n"+this.rollNo+") "+this.name+"\n--*--*--*--");
 		System.out.println("Address : "+this.address);
 		System.out.println("Blood Group : "+this.bloodGroup+"\n");
+		if(this.marks!=null) {
+			System.out.println("MARKS\n--------");
+			for(int mark:this.marks) {
+				System.out.println(mark);
+			}
+		}
 		
 	}
 
