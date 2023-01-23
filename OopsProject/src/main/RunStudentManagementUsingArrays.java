@@ -7,7 +7,7 @@ import classes.StudentDataAccessObject;
 
 //Inorder to create an checked exception we have to inherit from Exception Class since
 //the subclasses and itself is of exception type checked
-public class RunStudentManagementUsingArraysWithCheckedException {
+public class RunStudentManagementUsingArrays {
 
 	public static void main(String[] args) {
 		
