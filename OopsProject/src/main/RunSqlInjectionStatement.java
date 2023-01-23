@@ -6,23 +6,24 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-// SELECT * FROM students_tb;
-// SELECT name FROM students_tb;
-// SELECT id,name FROM students_tb;
-// SELECT * FROM students_tb WHERE address = 'Mumbai';
-// SELECT * FROM students_tb WHERE name LIKE '%n%';
-// SELECT * FROM students_tb WHERE name LIKE '%r';
-// SELECT * FROM students_tb WHERE name LIKE 'S%';
 
-public class RunJDBCStatementSelect {
+// Sonakshi's account logged in
+// Sonakshi is logged in with her username => Sonakshi from a website text field
+// this her profile page logic
+public class RunSqlInjectionStatement {
 
 	public static void main(String[] args) {
-
+		
+//		String name = "Sonakshi";
+		
+		//SQL INJECTION SCRIPT
+		String name = "' OR '1'='1";
+		
 		final String USERNAME = "root";
 		final String PASSWORD = "root";
 		final String DRIVER_CLASS = "com.mysql.cj.jdbc.Driver";
 		final String CONNECTION_URL = "jdbc:mysql://localhost:3306/student_management_db";
-		final String SQL = "SELECT * FROM students_tb";
+		final String SQL = "SELECT * FROM students_tb WHERE name = '"+name+"'";
 
 		try {
 
@@ -56,6 +57,7 @@ public class RunJDBCStatementSelect {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
+
 	}
 
 }
