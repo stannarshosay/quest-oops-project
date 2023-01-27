@@ -15,6 +15,16 @@ public class Student implements Serializable {
 
 	}
 
+	public Student(String name, int rollNo, String address, String bloodGroup) {
+		super();
+		this.name = name;
+		this.rollNo = rollNo;
+		this.address = address;
+		this.bloodGroup = bloodGroup;
+	}
+
+
+
 	public String getName() {
 		return name;
 	}
